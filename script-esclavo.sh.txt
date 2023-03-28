@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Encender Servicio DNS"
+sudo service named start
+
+echo "Encender Servicio VSFTPD"
+sudo service vsftpd start
+
+echo "Modificar Resolv.conf"
+cat <<TEST> /etc/resolv.conf
+nameserver 192.168.100.2
+TEST
